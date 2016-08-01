@@ -2,9 +2,9 @@
 Solutions for technical questions repository.
 
 
-*Main Topics:*
+**Main Topics:**
 
 - Algorithms
 - Data Structures
 
-*Helpful Resources:*
+**Helpful Resources:**
