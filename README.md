@@ -9,3 +9,4 @@ Solutions for technical questions repository.
 
 **Helpful Resources:**
 - http://www.geeksforgeeks.org/
+- https://www.reddit.com/r/dailyprogrammer/
