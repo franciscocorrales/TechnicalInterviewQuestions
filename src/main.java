@@ -1,5 +1,10 @@
 package src;
 
+import java.awt.List;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.LinkedList;
+
 import solutions.GFG_A_280.*;
 
 public class main{
@@ -18,18 +23,31 @@ public class main{
 	    Palindrome p11 = new Palindrome("zababbabaz");
 	}
 	
+	private static LinkedList string2LinkedList(String word){
+		LinkedList ll = new LinkedList();
+		if(word != null){
+			for(int i = 0; i < word.length(); i++){
+				ll.add( word.charAt(i) );
+			}
+		}
+		return ll;
+	}
+	
 	public static void testLinked(){
-		PalindromeLinked p1 = new PalindromeLinked("abba");
-		PalindromeLinked p2 = new PalindromeLinked(null);
-		PalindromeLinked p3 = new PalindromeLinked("abbanot");
-	    PalindromeLinked p4 = new PalindromeLinked("ababbaba");
-	    PalindromeLinked p5 = new PalindromeLinked("");
-	    PalindromeLinked p6 = new PalindromeLinked("abba!#@$%^(^&*()(*abba");
-	    PalindromeLinked p7 = new PalindromeLinked("abcba");
-	    PalindromeLinked p8 = new PalindromeLinked("aa");
-	    PalindromeLinked p9 = new PalindromeLinked("a");
-	    PalindromeLinked p10 = new PalindromeLinked("ababcbaba");
-	    PalindromeLinked p11 = new PalindromeLinked("zababbabaz");
+				
+		PalindromeLinked checker = new PalindromeLinked();
+		checker.isPalindrome(string2LinkedList("abba")); 
+		checker.isPalindrome(string2LinkedList(null)); 
+		checker.isPalindrome(string2LinkedList("abbanot")); 
+		checker.isPalindrome(string2LinkedList("ababbaba"));
+		checker.isPalindrome(string2LinkedList("")); 
+		checker.isPalindrome(string2LinkedList("abba!#@$%^(^&*()(*abba")); 
+		checker.isPalindrome(string2LinkedList("abcba")); 
+		checker.isPalindrome(string2LinkedList("aa")); 
+		checker.isPalindrome(string2LinkedList("a")); 
+		checker.isPalindrome(string2LinkedList("ababcbaba")); 
+		checker.isPalindrome(string2LinkedList("zababbabaz"));
+
 	}
 	
   public static void main(String[] args)
