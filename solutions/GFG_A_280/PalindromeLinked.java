@@ -1,3 +1,5 @@
+package solutions.GFG_A_280;
+
 
 public class PalindromeLinked {
 
