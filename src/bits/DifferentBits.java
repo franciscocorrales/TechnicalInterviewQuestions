@@ -5,30 +5,30 @@ package src.bits;
  * */
 
 public class DifferentBits {
-
-	public DifferentBits() {
-	}
 	
-	private static int numberOfFlips(int a, int b){
+	private int numberOfFlips(int a, int b){
 		int numberOfFlips = 0;
 		int difference = a ^ b;
 		numberOfFlips = Integer.bitCount(difference);
 		return numberOfFlips;
 	}
 	
-	private static void printNumberOfFlips(int a, int b){
+	private void printNumberOfFlips(int a, int b){
 		System.out.println( a + "->" + b + ": " + numberOfFlips(a, b) + "\n");
 	}
 
 	public static void main(String[] args) {
-		printNumberOfFlips(0, 12);
-		printNumberOfFlips(-1, 1);
-		printNumberOfFlips(1000, -1000);
-		printNumberOfFlips(33, 33);
-		printNumberOfFlips(64, 64);
-		printNumberOfFlips(0, 1024);
-		printNumberOfFlips(555, 556);
-		printNumberOfFlips(63, 65);
+		
+		DifferentBits db = new DifferentBits();
+		
+		db.printNumberOfFlips(0, 12);
+		db.printNumberOfFlips(-1, 1);
+		db.printNumberOfFlips(1000, -1000);
+		db.printNumberOfFlips(33, 33);
+		db.printNumberOfFlips(64, 64);
+		db.printNumberOfFlips(0, 1024);
+		db.printNumberOfFlips(555, 556);
+		db.printNumberOfFlips(63, 65);
 		
 	}
 
