@@ -1,5 +1,6 @@
 package src.trees;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 /*
@@ -35,40 +36,34 @@ public class HasPathSum {
 	
 	
 	private void printPathSum(SimpleBinaryTree tree, int sum) {
-		int[] path = new int[1000]; // should be set to the max height of tree
-		printPathSum(tree.root, path, 0, sum); 
+		ArrayList<Integer> path = new ArrayList<Integer>();
+		printPathSum(tree.root, path,sum); 
 	}
 
 	
-	private void printPathSum(SimpleBinaryNode currentNode, int[] path, int pathLen, int sum) {
+	private void printPathSum(SimpleBinaryNode currentNode,ArrayList<Integer> path, int sum) {
 		if (currentNode==null)
 			return;
 
-		// append this node to the path array 
-		path[pathLen] = currentNode.value; 
-		pathLen++;
+		path.add(currentNode.value);
 
 		// it's a leaf, so print the path that led to here 
 		if (currentNode.isLeaf() && sum == currentNode.value) { 
-			printArray(path, pathLen); 
+			printArray(path); 
 		} 
 		else {
-			printPathSumChildren(currentNode, path, pathLen,sum);
+			printPathSumChildren(currentNode, path,sum);
 		} 
 	}
 	
-	private void printPathSumChildren(SimpleBinaryNode currentNode, int[] path, int pathLen, int sum){
+	private void printPathSumChildren(SimpleBinaryNode currentNode, ArrayList<Integer> path, int sum){
 		int newSum = sum - currentNode.value;
-		printPathSum(currentNode.left, path, pathLen, newSum); 
-	    printPathSum(currentNode.right, path, pathLen, newSum); 
+		printPathSum(currentNode.left,  new ArrayList<Integer>(path), newSum); 
+	    printPathSum(currentNode.right, new ArrayList<Integer>(path), newSum); 
 	}
 	
-	private void printArray(int[] ints, int len) { 
-		  int i; 
-		  for (i=0; i<len; i++) { 
-		   System.out.print(ints[i] + " "); 
-		  } 
-		  System.out.println(); 
+	private void printArray(ArrayList<Integer> path) {		
+		System.out.println(Arrays.toString(path.toArray()));
 	} 
 
 	
@@ -120,6 +115,7 @@ public class HasPathSum {
 		finder.printPath(tree2, 4);
 		finder.printPath(tree2, 2222);
 		finder.printPath(tree2, 26);
+		finder.printPath(tree2, 13);
 
 	}
 
