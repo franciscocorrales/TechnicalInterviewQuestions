@@ -83,7 +83,6 @@ public class HasPathSum {
 		HasPathSum finder = new HasPathSum();
 		
 		SimpleBinaryTree tree1 = new SimpleBinaryTree();
-		tree1.printTreeTab();
 		finder.printPath(tree1, 22);		
 		
 		/*
@@ -116,7 +115,6 @@ public class HasPathSum {
 							).root
 					).root
 				);
-		tree2.printTreeTab();
 		finder.printPath(tree2, 22);
 		finder.printPath(tree2, 5);
 		finder.printPath(tree2, 4);
@@ -126,10 +124,15 @@ public class HasPathSum {
 	}
 
 	private void printPath(SimpleBinaryTree tree, int sum) {
-		System.out.println("Has path for sum:"+ sum + " ? -> " + hasPathSum(tree, sum) );
-		System.out.println("Path: ");
-		printPathSum(tree, sum);
-		System.out.println("\n");
+		boolean hasPath =  hasPathSum(tree, sum);
+		if(hasPath){
+			System.out.println("Paths for sum: " + sum);
+			printPathSum(tree, sum);
+			System.out.println("\n");
+		}
+		else{
+			System.out.println("The tree doesn't have a path for the sum: " + sum);
+		}
 	}
 	
 	
