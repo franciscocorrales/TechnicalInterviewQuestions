@@ -1,11 +1,12 @@
-package src.geekforgeeks.amazon.set280;
+package src.string;
 
-public class Palindrome {
+
+public class IsPalindrome {
 
 	  private String text;
 	  private Boolean isPalindrome;
 	  
-	  public Palindrome(String text){
+	  public IsPalindrome(String text){
 	    this.text = text;
 	    this.isPalindrome = true;
 	    this.isPalindrome();
@@ -38,4 +39,19 @@ public class Palindrome {
 	  		int reverseIndex = text.length() - 1 - charIndex;
 	        return (text.charAt(charIndex) == text.charAt(reverseIndex)) ;
 	  }
+	  
+	  public static void main(String[] args)
+	  {
+			IsPalindrome p1 = new IsPalindrome("abba");
+		    IsPalindrome p2 = new IsPalindrome(null);
+		    IsPalindrome p3 = new IsPalindrome("abbanot");
+		    IsPalindrome p4 = new IsPalindrome("ababbaba");
+		    IsPalindrome p5 = new IsPalindrome("");
+		    IsPalindrome p6 = new IsPalindrome("abba!#@$%^(^&*()(*abba");
+		    IsPalindrome p7 = new IsPalindrome("abcba");
+		    IsPalindrome p8 = new IsPalindrome("aa");
+		    IsPalindrome p9 = new IsPalindrome("a");
+		    IsPalindrome p10 = new IsPalindrome("ababcbaba");
+		    IsPalindrome p11 = new IsPalindrome("zababbabaz");
+	  }	
 }
