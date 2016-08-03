@@ -29,12 +29,6 @@ public class HasPathSum {
 		}
 	}
 
-
-
-	
-	
-	
-	
 	private void printPathSum(SimpleBinaryTree tree, int sum) {
 		ArrayList<Integer> path = new ArrayList<Integer>();
 		printPathSum(tree.root, path,sum); 
@@ -42,6 +36,7 @@ public class HasPathSum {
 
 	
 	private void printPathSum(SimpleBinaryNode currentNode,ArrayList<Integer> path, int sum) {
+		//if we get to a leaf, but didn't match the value, this path doesn't qualifies.
 		if (currentNode==null)
 			return;
 
@@ -65,13 +60,6 @@ public class HasPathSum {
 	private void printArray(ArrayList<Integer> path) {		
 		System.out.println(Arrays.toString(path.toArray()));
 	} 
-
-	
-	
-	
-	
-	
-	
 	
 	public static void main(String[] args) {
 		
