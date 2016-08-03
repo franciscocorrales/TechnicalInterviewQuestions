@@ -2,6 +2,10 @@ package src.linkedlist;
 
 import java.util.LinkedList;
 
+/*
+ * http://www.geeksforgeeks.org/function-to-check-if-a-singly-linked-list-is-palindrome/
+ * */
+
 public class IsPalindrome {
 
 	private Boolean isPalindrome;
