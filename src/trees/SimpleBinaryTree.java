@@ -1,36 +1,28 @@
 package src.trees;
 
+/*
+ * http://cslibrary.stanford.edu/110/BinaryTrees.html
+ * */
+
 public class SimpleBinaryTree {
 
-	private SimpleBinaryNode root;
-	
-	private class SimpleBinaryNode{
-		SimpleBinaryNode left;
-		SimpleBinaryNode right;
-	    int value;
-	    
-	    SimpleBinaryNode(int newValue){
-	    	this.value = newValue;
-	    }
-	    
-	    private void print(){
-	    	System.out.print( value + " ");
-	    }
-
-		public void printTab(String tabs) {
-			System.out.print( tabs  + value + " \n " );
-		}
-	}
+	SimpleBinaryNode root;
 	
 	public SimpleBinaryTree() {
 		root = null;
+	}
+	
+	public SimpleBinaryTree(SimpleBinaryNode newRoot, SimpleBinaryNode left, SimpleBinaryNode right) {
+		root = newRoot;
+		root.left = left;
+		root.right = right;
 	}
 	
 	private void insert(int elementToInsert){
 		root = insert(root, elementToInsert);
 	}
 	
-	private SimpleBinaryNode insert(SimpleBinaryNode fatherNode, int elementToInsert){
+	public SimpleBinaryNode insert(SimpleBinaryNode fatherNode, int elementToInsert){
 
 		if(isLeaf(fatherNode)){
 			return new SimpleBinaryNode(elementToInsert);
@@ -101,6 +93,38 @@ public class SimpleBinaryTree {
 		tree1.insert(5);
 		tree1.printTree();
 		tree1.printTreeTab();
+
+		/*
+			   	  5
+				/   \
+			   4     8
+		      /     / \
+		     11    13  4   
+		    /  \      /  \
+		   7    2    5    1
+		*/
+		SimpleBinaryTree tree2 = new SimpleBinaryTree(
+				new SimpleBinaryNode(5),
+					new SimpleBinaryTree(
+							new SimpleBinaryNode(4),
+							new SimpleBinaryTree(
+									new SimpleBinaryNode(11),
+									new SimpleBinaryNode(7),
+									new SimpleBinaryNode(2)
+							).root,
+							null
+					).root,
+					new SimpleBinaryTree(
+							new SimpleBinaryNode(8),
+							new SimpleBinaryNode(13),
+							new SimpleBinaryTree(
+									new SimpleBinaryNode(4),
+									new SimpleBinaryNode(5),
+									new SimpleBinaryNode(1)
+							).root
+					).root
+				);
+		tree2.printTreeTab();
 	}
 	
 }
