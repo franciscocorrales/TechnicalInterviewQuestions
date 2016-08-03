@@ -17,4 +17,8 @@ public class SimpleBinaryNode{
 	public void printTab(String tabs) {
 		System.out.print( tabs  + value + " \n " );
 	}
+	
+	public boolean isLeaf(){
+		return left==null && right == null;
+	}
 }

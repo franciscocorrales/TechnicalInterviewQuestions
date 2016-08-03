@@ -24,7 +24,7 @@ public class SimpleBinaryTree {
 	
 	public SimpleBinaryNode insert(SimpleBinaryNode fatherNode, int elementToInsert){
 
-		if(isLeaf(fatherNode)){
+		if(isEmpty(fatherNode)){
 			return new SimpleBinaryNode(elementToInsert);
 		}
 		else{
@@ -34,7 +34,7 @@ public class SimpleBinaryTree {
 		
 	}
 	
-	private boolean isLeaf(SimpleBinaryNode node){
+	private boolean isEmpty(SimpleBinaryNode node){
 		return node == null;
 	}
 	
@@ -58,7 +58,7 @@ public class SimpleBinaryTree {
 	}
 
 	private void printTree(SimpleBinaryNode currentNode) {
-		if(isLeaf(currentNode)){
+		if(isEmpty(currentNode)){
 			return ;//nothing
 		}
 		
@@ -69,13 +69,18 @@ public class SimpleBinaryTree {
 	
 	public void printTreeTab(){
 		System.out.println();
-		printTreeTab(root, "");
+		if(root == null){
+			System.out.println("This tree is empty! :( ");
+		}
+		else{
+			printTreeTab(root, "");
+		}
 		System.out.println();
 	}
 	 
 
 	private void printTreeTab(SimpleBinaryNode currentNode, String tabs) {
-		if(isLeaf(currentNode)){
+		if(isEmpty(currentNode)){
 			return ;//nothing
 		}
 		
