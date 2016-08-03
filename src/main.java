@@ -5,11 +5,23 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.LinkedList;
 
-import solutions.GFG_A_280.*;
+import src.geekforgeeks.amazon.set280.Palindrome;
+import src.geekforgeeks.amazon.set280.PalindromeLinked;
 
 public class main{
 	
-	public static void test(){
+	private static void assertTrue(Boolean executedValue){
+		if(executedValue != true){
+			System.out.println("Error!");
+		}
+	}
+	private static void assertFalse(Boolean executedValue){
+		if(executedValue != false){
+			System.out.println("Error!");
+		}
+	}
+	
+	private static void test(){
 		Palindrome p1 = new Palindrome("abba");
 	    Palindrome p2 = new Palindrome(null);
 	    Palindrome p3 = new Palindrome("abbanot");
@@ -33,7 +45,7 @@ public class main{
 		return ll;
 	}
 	
-	public static void testLinked(){
+	private static void testLinked(){
 				
 		PalindromeLinked checker = new PalindromeLinked();
 		checker.isPalindrome(string2LinkedList("abba")); 
