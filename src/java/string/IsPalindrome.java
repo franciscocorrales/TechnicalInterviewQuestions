@@ -1,4 +1,4 @@
-package src.string;
+package src.java.string;
 
 
 public class IsPalindrome {

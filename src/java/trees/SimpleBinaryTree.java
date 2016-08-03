@@ -1,4 +1,4 @@
-package src.trees;
+package src.java.trees;
 
 /*
  * http://cslibrary.stanford.edu/110/BinaryTrees.html

@@ -1,4 +1,4 @@
-package src.matrix;
+package src.java.matrix;
 
 /*
  * http://www.geeksforgeeks.org/search-in-row-wise-and-column-wise-sorted-matrix/

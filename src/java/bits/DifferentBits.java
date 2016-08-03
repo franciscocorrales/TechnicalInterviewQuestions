@@ -1,4 +1,4 @@
-package src.bits;
+package src.java.bits;
 
 /*
  * http://www.geeksforgeeks.org/count-number-of-bits-to-be-flipped-to-convert-a-to-b/

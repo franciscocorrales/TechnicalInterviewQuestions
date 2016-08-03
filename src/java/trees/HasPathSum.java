@@ -1,4 +1,4 @@
-package src.trees;
+package src.java.trees;
 
 import java.util.ArrayList;
 import java.util.Arrays;

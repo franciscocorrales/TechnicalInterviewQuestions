@@ -1,4 +1,4 @@
-package src.trees;
+package src.java.trees;
 
 
 public class SimpleBinaryNode{
